@@ -1,5 +1,10 @@
-conandbuildinfo.*
-conaninfo.txt
-bin/*
-build/*
-gccbin/*
+*.pyc
+**/conanbuildinfo.cmake
+**/conanbuildinfo.gcc
+**/conanbuildinfo.props
+*/conanbuildinfo.txt
+*/conaninfo.txt
+*/bin/*
+*/build/*
+*/gccbin/*
+*/CMakeFiles/*
