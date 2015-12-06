@@ -1,0 +1,5 @@
+conandbuildinfo.*
+conaninfo.txt
+bin/*
+build/*
+gccbin/*

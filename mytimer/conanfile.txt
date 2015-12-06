@@ -1,0 +1,15 @@
+[requires]
+Poco/1.6.1@lasote/stable
+
+[generators]
+cmake
+gcc
+visual_studio
+txt
+
+[options]
+Poco:poco_static=False
+
+[imports]
+bin, *.dll -> ./bin
+lib, *.dylib* -> ./bin

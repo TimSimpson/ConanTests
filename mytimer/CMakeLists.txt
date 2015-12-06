@@ -1,0 +1,8 @@
+PROJECT(FoundationTimer)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+INCLUDE(conanbuildinfo.cmake)
+CONAN_BASIC_SETUP()
+
+ADD_EXECUTABLE(timer timer.cpp)
+TARGET_LINK_LIBRARIES(timer ${CONAN_LIBS})
