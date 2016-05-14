@@ -1,0 +1,31 @@
+import conanbuildinfoM ;
+
+boost.use-project ;
+
+project FoundationTimer
+#    :   requirements
+#        <library>/boost//headers
+#    :   usage-requirements
+#        <include>./
+    ;
+
+
+
+exe timer
+    :   timer.cpp
+        conan_libs
+    ;
+
+install exe
+    :   calc
+    :   <install-dependencies>on <install-type>EXE
+        <install-type>LIB
+    ;
+
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+INCLUDE(conanbuildinfo.cmake)
+CONAN_BASIC_SETUP()
+
+ADD_EXECUTABLE(timer timer.cpp)
+TARGET_LINK_LIBRARIES(timer ${CONAN_LIBS})

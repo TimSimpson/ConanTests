@@ -3,7 +3,7 @@ using testing ;
 
 import pch ;
 
-boost.use-project 1.57 ;
+boost.use-project ;
 
 project CalculatorAsRealLib
     :   requirements
@@ -12,9 +12,9 @@ project CalculatorAsRealLib
         <include>./
     ;
 
-cpp-pch precompiled_headers
-    :   precompiled_headers.hpp
-    ;
+#cpp-pch precompiled_headers
+#    :   precompiled_headers.hpp
+#    ;
 
 # Not sure if pch needs to be first...
 obj calc_obj

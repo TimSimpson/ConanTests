@@ -1,0 +1,111 @@
+CONAN_INCLUDE_DIRS = "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/include"
+            "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/include"
+            "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/include" ${CONAN_INCLUDE_DIRS})
+SET(CONAN_LIB_DIRS "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/lib"
+            "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/lib"
+            "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/lib" ${CONAN_LIB_DIRS})
+SET(CONAN_BIN_DIRS "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/bin"
+            "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/bin"
+            "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/bin" ${CONAN_BIN_DIRS})
+SET(CONAN_LIBS PocoUtil PocoXML PocoJSON PocoMongoDB PocoNet PocoCrypto PocoData PocoDataSQLite PocoZip PocoFoundation ssleay32MD libeay32MD crypt32.lib msi.lib zlibstatic ${CONAN_LIBS})
+SET(CONAN_DEFINES  ${CONAN_DEFINES})
+SET(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
+SET(CONAN_SHARED_LINK_FLAGS " ${CONAN_SHARED_LINK_FLAGS}")
+SET(CONAN_EXE_LINKER_FLAGS " ${CONAN_EXE_LINKER_FLAGS}")
+SET(CONAN_C_FLAGS " ${CONAN_C_FLAGS}")
+
+SET(CONAN_INCLUDE_DIRS_POCO "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/include")
+SET(CONAN_LIB_DIRS_POCO "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/lib")
+SET(CONAN_BIN_DIRS_POCO "C:/Users/Tim/.conan/data/Poco/1.6.1/lasote/stable/package/7bf4cefdff5023cb95a787847c03d94d5e09a09c/bin")
+SET(CONAN_LIBS_POCO PocoUtil PocoXML PocoJSON PocoMongoDB PocoNet PocoCrypto PocoData PocoDataSQLite PocoZip PocoFoundation)
+SET(CONAN_DEFINES_POCO )
+SET(CONAN_CXX_FLAGS_POCO "")
+SET(CONAN_SHARED_LINK_FLAGS_POCO "")
+SET(CONAN_EXE_LINKER_FLAGS_POCO "")
+SET(CONAN_C_FLAGS_POCO "")
+
+SET(CONAN_INCLUDE_DIRS_ZLIB "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/include")
+SET(CONAN_LIB_DIRS_ZLIB "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/lib")
+SET(CONAN_BIN_DIRS_ZLIB "C:/Users/Tim/.conan/data/zlib/1.2.8/lasote/stable/package/0a461f8d4221509c1b9a75411e0cb44f7a3601c0/bin")
+SET(CONAN_LIBS_ZLIB zlibstatic)
+SET(CONAN_DEFINES_ZLIB )
+SET(CONAN_CXX_FLAGS_ZLIB "")
+SET(CONAN_SHARED_LINK_FLAGS_ZLIB "")
+SET(CONAN_EXE_LINKER_FLAGS_ZLIB "")
+SET(CONAN_C_FLAGS_ZLIB "")
+
+SET(CONAN_INCLUDE_DIRS_OPENSSL "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/include")
+SET(CONAN_LIB_DIRS_OPENSSL "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/lib")
+SET(CONAN_BIN_DIRS_OPENSSL "C:/Users/Tim/.conan/data/OpenSSL/1.0.2d/lasote/stable/package/468db984490393c523af63c59b890e6fef28666f/bin")
+SET(CONAN_LIBS_OPENSSL ssleay32MD libeay32MD crypt32.lib msi.lib)
+SET(CONAN_DEFINES_OPENSSL )
+SET(CONAN_CXX_FLAGS_OPENSSL "")
+SET(CONAN_SHARED_LINK_FLAGS_OPENSSL "")
+SET(CONAN_EXE_LINKER_FLAGS_OPENSSL "")
+SET(CONAN_C_FLAGS_OPENSSL "")
+
+MACRO(CONAN_BASIC_SETUP)
+    CONAN_CHECK_COMPILER()
+    CONAN_OUTPUT_DIRS_SETUP()
+    CONAN_FLAGS_SETUP()
+ENDMACRO()
+
+MACRO(CONAN_FLAGS_SETUP)
+    INCLUDE_DIRECTORIES(${CONAN_INCLUDE_DIRS})
+    LINK_DIRECTORIES(${CONAN_LIB_DIRS})
+    ADD_DEFINITIONS(${CONAN_DEFINES})
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CONAN_CXX_FLAGS}")
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CONAN_C_FLAGS}")
+    SET(CMAKE_SHARED_LINK_FLAGS "${CMAKE_SHARED_LINK_FLAGS} ${CONAN_SHARED_LINK_FLAGS}")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${CONAN_EXE_LINKER_FLAGS}")
+    IF(APPLE)
+        # https://cmake.org/Wiki/CMake_RPATH_handling
+        # CONAN GUIDE: All generated libraries should have the id and dependencies to other
+        # dylibs without path, just the name, EX:
+        # libMyLib1.dylib:
+        #     libMyLib1.dylib (compatibility version 0.0.0, current version 0.0.0)
+        #     libMyLib0.dylib (compatibility version 0.0.0, current version 0.0.0)
+        #     /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 120.0.0)
+        #     /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1197.1.1)
+        SET(CMAKE_SKIP_RPATH 1)  # AVOID RPATH FOR *.dylib, ALL LIBS BETWEEN THEM AND THE EXE
+                                 # SHOULD BE ON THE LINKER RESOLVER PATH (./ IS ONE OF THEM)
+    ENDIF()
+    IF(CONAN_LINK_RUNTIME)
+        STRING(REPLACE "/MD" ${CONAN_LINK_RUNTIME} CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
+        STRING(REPLACE "/MDd" ${CONAN_LINK_RUNTIME} CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
+        STRING(REPLACE "/MD" ${CONAN_LINK_RUNTIME} CMAKE_C_FLAGS_RELEASE ${CMAKE_C_FLAGS_RELEASE})
+        STRING(REPLACE "/MDd" ${CONAN_LINK_RUNTIME} CMAKE_C_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
+    ENDIF()
+ENDMACRO()
+
+MACRO(CONAN_OUTPUT_DIRS_SETUP)
+    SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
+    SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+    SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+
+    SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+    SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+    SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+ENDMACRO()
+
+MACRO(CONAN_CHECK_COMPILER)
+    IF("${CONAN_COMPILER}" STREQUAL "Visual Studio")
+        if(NOT "${CMAKE_CXX_COMPILER_ID}" STREQUAL MSVC)
+            MESSAGE(FATAL_ERROR "The current compiler is not MSVC")
+        endif()
+    ELSEIF("${CONAN_COMPILER}" STREQUAL "gcc")
+        if(NOT "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+             MESSAGE(FATAL_ERROR "The current compiler is not GCC")
+        endif()
+        string(REGEX MATCHALL "[0-9]+" GCC_VERSION_COMPONENTS ${CMAKE_CXX_COMPILER_VERSION})
+        list(GET GCC_VERSION_COMPONENTS 0 GCC_MAJOR)
+        list(GET GCC_VERSION_COMPONENTS 1 GCC_MINOR)
+        if(NOT ${GCC_MAJOR}.${GCC_MINOR} VERSION_EQUAL "${CONAN_COMPILER_VERSION}")
+           message(FATAL_ERROR "INCORRECT GCC VERSION CONAN=" ${CONAN_COMPILER_VERSION}
+                               " CURRENT GCC=" ${GCC_MAJOR}.${GCC_MINOR})
+        endif()
+    ELSEIF("${CONAN_COMPILER}" STREQUAL "clang")
+        # TODO, CHECK COMPILER AND VERSIONS, AND MATCH WITH apple-clang TOO
+    endif()
+
+ENDMACRO()

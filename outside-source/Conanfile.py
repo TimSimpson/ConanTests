@@ -1,16 +1,16 @@
-from conans import ConanFile, CMake
+import conans
+from conans.client import b2
 
 
-class HelloConan(ConanFile):
-    name = "Hello"
+class SuperLib(conans.ConanFile):
+    name = "super-lib"
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
-    exports = "hello/*"
+    exports = "super-lib/*"
 
     def build(self):
-        cmake = CMake(self.settings)
-        self.run('cd hello && cmake . %s' % cmake.command_line)
-        self.run("cd hello && cmake --build . %s" % cmake.build_config)
+        bb = b2.BoostBuild(self.settings)
+        self.run('cd super-lib && b2 %s' % bb.command_line)
 
     def package(self):
         self.copy("*.h", dst="include", src="hello")
